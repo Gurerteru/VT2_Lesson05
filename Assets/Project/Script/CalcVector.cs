@@ -2,20 +2,17 @@ using UnityEngine;
 
 public class CalcVector : MonoBehaviour
 {
+    public Vector3 A = new Vector3(2, 5, -4);
+    public Vector3 B = new Vector3(5, 3, 6);
 
     public Vector3 Result = Vector3.zero;
     public float DotRssult = 0;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        var result = Subtract(new Vector3(2, 5, -4), new Vector3(5, 3, 6));
-        
+        Result = CrossMaltiply(A, B);
 
+        DotRssult = DotMultiply(A, B);
     }
 
     /// <summary>
@@ -87,7 +84,6 @@ public class CalcVector : MonoBehaviour
         //result.z = (a.x * b.y) - (a.y * b.x);
 
         result = Vector3.Cross(a, b);
-
 
         // ƒxƒNƒgƒ‹‚Ì‰ÂŽ‹‰»
         Debug.DrawRay(Vector3.zero, a, Color.red, 0, false);
